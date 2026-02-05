@@ -15,6 +15,9 @@ public class BowStringController : MonoBehaviour
     [SerializeField]
     private Transform midPointGrabObject, midPointVisualObject, midPointParent;
 
+    [SerializeField]
+    private float bowStringStretchLimit = 0.5f;
+
     private Transform interactor;
 
     private void Awake()
