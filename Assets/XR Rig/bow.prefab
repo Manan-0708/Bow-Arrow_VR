@@ -1040,6 +1040,12 @@ MonoBehaviour:
   midPointVisualObject: {fileID: 6426219002571061894}
   midPointParent: {fileID: 1772222714701872358}
   bowStringStretchLimit: 0.9
+  OnBowPulled:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBowReleased:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &7878872233382728994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4bdabe6d6d6cd8f4cb84e12da3f748a8, type: 3}
