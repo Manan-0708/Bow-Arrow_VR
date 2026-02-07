@@ -21,8 +21,13 @@ public class ArrowController : MonoBehaviour
         midPointVisual.SetActive(false);
 
         GameObject arrow = Instantiate(arrowPrefab);
-        arrow.transform.position = arrowSpawnPoint.transform.position;
+
+        Vector3 spawnPos = arrowSpawnPoint.transform.position
+                 + midPointVisual.transform.forward * 0.02f;
+
+        arrow.transform.position = spawnPos;
         arrow.transform.rotation = midPointVisual.transform.rotation;
+
 
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
 
