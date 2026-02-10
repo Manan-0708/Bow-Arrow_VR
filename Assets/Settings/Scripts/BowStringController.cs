@@ -18,6 +18,7 @@ public class BowStringController : MonoBehaviour
 
     private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     [SerializeField]
     private Transform midPointGrabObject, midPointVisualObject, midPointParent;
@@ -27,16 +28,21 @@ public class BowStringController : MonoBehaviour
 
 =======
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
     private Transform interactor;
     private float strength;
 
     public UnityEvent OnBowPulled;
     public UnityEvent<float> OnBowReleased;
+<<<<<<< HEAD
 
     private float strength;
 
     public UnityEvent OnBowPulled;
     public UnityEvent<float> OnBowReleased;
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 
     private void Awake()
     {
@@ -52,11 +58,14 @@ public class BowStringController : MonoBehaviour
     private void PrepareBowString(SelectEnterEventArgs args)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         OnBowReleased?.Invoke(strength);
         strength = 0;
 
 
 =======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
         interactor = args.interactorObject.transform;
         // prefer HapticSender on the interactor/controller, otherwise use fallback
         currentHaptics = args.interactorObject.transform.GetComponentInChildren<HapticSender>() ?? hapticsFallback;
@@ -72,11 +81,15 @@ public class BowStringController : MonoBehaviour
         strength = 0f;
 
         currentHaptics = null;
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
         interactor = null;
         midPointGrabObject.localPosition = Vector3.zero;
         midPointVisualObject.localPosition = Vector3.zero;
         bowStringRenderer.CreateString(null);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     }
@@ -85,6 +98,8 @@ public class BowStringController : MonoBehaviour
     {
         interactor = arg0.interactorObject.transform;
         OnBowPulled?.Invoke();
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 =======
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
     }
@@ -109,6 +124,7 @@ public class BowStringController : MonoBehaviour
         // small throttled haptic while holding (scale amplitude by strength)
         if (currentHaptics != null && Time.time - lastPulseTime > 0.05f)
         {
+<<<<<<< HEAD
 <<<<<<< HEAD
             // get grab object's position in midPointParent local space
             Vector3 grabLocal = midPointParent.InverseTransformPoint(midPointGrabObject.position);
@@ -152,6 +168,10 @@ public class BowStringController : MonoBehaviour
             }
 
             bowStringRenderer.CreateString(midPointVisualObject.position);
+=======
+            currentHaptics.SendHapticImpulse(Mathf.Clamp01(strength * 0.5f), 0.02f);
+            lastPulseTime = Time.time;
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 =======
             currentHaptics.SendHapticImpulse(Mathf.Clamp01(strength * 0.5f), 0.02f);
             lastPulseTime = Time.time;

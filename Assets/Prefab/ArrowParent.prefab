@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 4434081997472107723}
   - component: {fileID: 24495862860659905}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  - component: {fileID: -1376948861891811759}
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 =======
   - component: {fileID: -1376948861891811759}
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
@@ -80,7 +84,10 @@ MonoBehaviour:
   rb: {fileID: 4434081997472107723}
   rotationSpeed: 15
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!114 &-1376948861891811759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +103,9 @@ MonoBehaviour:
   rb: {fileID: 4434081997472107723}
   myCollider: {fileID: 944700652733253088}
   stickingArrow: {fileID: 4731412397282146735, guid: 29754d557fcf0584da2e97c1654fc4c4, type: 3}
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!1 &6859018858275951061
 GameObject:

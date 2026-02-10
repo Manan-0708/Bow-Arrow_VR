@@ -1122,7 +1122,11 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 1
+=======
+  m_IsActive: 0
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 =======
   m_IsActive: 0
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
