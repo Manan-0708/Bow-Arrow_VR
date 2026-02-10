@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!1 &27215591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6222314526477712095, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
@@ -137,6 +142,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   node: 5
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!114 &142959183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +376,12 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
+<<<<<<< HEAD
+<<<<<<< HEAD
+    m_AddedComponents: []
+=======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4381772433879990333, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
       insertIndex: -1
@@ -374,6 +389,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6222314526477712095, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
       insertIndex: -1
       addedObject: {fileID: 27215595}
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
   m_SourcePrefab: {fileID: 100100000, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
 --- !u!114 &544776582
 MonoBehaviour:
@@ -566,6 +585,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!1001 &1119632959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -623,6 +647,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64cd3e3d7c0a4eb4982eab7024a1ee9b, type: 3}
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!1 &1183112694
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +990,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
     - target: {fileID: 1123805827390157663, guid: 67b5b595b3589484288c32b9ccb8fb9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.14
@@ -978,6 +1011,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 7.14
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
     - target: {fileID: 6000789644073411997, guid: 67b5b595b3589484288c32b9ccb8fb9d, type: 3}
       propertyPath: m_Name
       value: bow 1
@@ -991,20 +1028,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b5b595b3589484288c32b9ccb8fb9d, type: 3}
+<<<<<<< HEAD
+<<<<<<< HEAD
+--- !u!114 &1358736762
+=======
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 --- !u!1 &1343211893 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4381772433879990333, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
   m_PrefabInstance: {fileID: 517193529}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1343211897
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: XRI Left Interaction/Activate
+  m_EditorClassIdentifier: 
+=======
   m_GameObject: {fileID: 1343211893}
   m_Enabled: 1
   m_EditorHideFlags: 0
+=======
+  m_GameObject: {fileID: 1343211893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
   m_Script: {fileID: 11500000, guid: a946cdbab08feda4a8582d84fa168ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -1021,6 +1082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
   m_Name: XRI Left Interaction/Activate
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
   m_Asset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   m_ActionId: 0c0991c5-d329-4afc-8892-1076b440477c
 --- !u!114 &1495816693
@@ -1154,4 +1219,11 @@ SceneRoots:
   - {fileID: 1183112698}
   - {fileID: 517193529}
   - {fileID: 1341624671}
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   - {fileID: 1119632959}
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+  - {fileID: 1119632959}
+>>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
