@@ -655,6 +655,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.028949542
       objectReference: {fileID: 0}
+    - target: {fileID: 8435782330996510085, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 89537d4305a6cbd4f9a15d6921a88283, type: 2}
+    - target: {fileID: 9148766307784812995, guid: 20e3fb00ce2877f46a2f418386c6e519, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 89537d4305a6cbd4f9a15d6921a88283, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -790,7 +798,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8ed4f1dac634c3647b3d56a618bf8690, type: 2}
+  - {fileID: 2100000, guid: 3bb25ac8a9b0f8143b3ebef9932a0d51, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
