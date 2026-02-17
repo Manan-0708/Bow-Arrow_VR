@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ public class ArrowController : MonoBehaviour
     [SerializeField]
     private float arrowMaxSpeed = 10;
 
+    [SerializeField] private AudioSource arrowReleaseAudio;
 
     public void PrepareArrow()
     {
@@ -28,12 +29,20 @@ public class ArrowController : MonoBehaviour
         arrow.transform.position = spawnPos;
         arrow.transform.rotation = midPointVisual.transform.rotation;
 
-
         Rigidbody rb = arrow.GetComponent<Rigidbody>();
 
         Vector3 shootDir = midPointVisual.transform.forward;
         rb.linearVelocity = shootDir * (strength * arrowMaxSpeed);
 
+        // ✅ NEW: Track arrow shot
+        SessionTracker.Instance.OnArrowShot();
+        TutorialController.Instance?.OnArrowShot();
 
+
+        // Play release sound
+        if (arrowReleaseAudio != null)
+        {
+            arrowReleaseAudio.Play();
+        }
     }
 }

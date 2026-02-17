@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1779539166870352341}
   - component: {fileID: 4434081997472107723}
   - component: {fileID: 24495862860659905}
+  - component: {fileID: -1376948861891811759}
   m_Layer: 3
   m_Name: ArrowParent
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,6 +76,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4434081997472107723}
   rotationSpeed: 15
+--- !u!114 &-1376948861891811759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3974213605446010928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad1afbbee0186e4d831e9129ac5560a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 4434081997472107723}
+  myCollider: {fileID: 944700652733253088}
+  stickingArrow: {fileID: 4731412397282146735, guid: 29754d557fcf0584da2e97c1654fc4c4, type: 3}
 --- !u!1 &6859018858275951061
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,7 +249,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 640ef6975f57ff5489b4429ad6cc9121, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 53.775356
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 640ef6975f57ff5489b4429ad6cc9121, type: 3}
       propertyPath: m_LocalScale.y
@@ -286,6 +302,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 640ef6975f57ff5489b4429ad6cc9121, type: 3}
       propertyPath: m_Name
       value: arrow2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 640ef6975f57ff5489b4429ad6cc9121, type: 3}
+      propertyPath: m_TagString
+      value: Arrow
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
