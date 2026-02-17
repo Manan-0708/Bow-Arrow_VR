@@ -1123,6 +1123,7 @@ GameObject:
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 1
 =======
   m_IsActive: 0
@@ -1130,6 +1131,9 @@ GameObject:
 =======
   m_IsActive: 0
 >>>>>>> ac3cd72d3309f67a6c8613bbd632811f9ed8f144
+=======
+  m_IsActive: 0
+>>>>>>> parent of 71e411b (half work done on paneks)
 --- !u!114 &695056931
 MonoBehaviour:
   m_ObjectHideFlags: 0
