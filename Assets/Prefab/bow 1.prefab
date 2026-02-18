@@ -1031,7 +1031,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1176,6 +1176,7 @@ MonoBehaviour:
   midPointVisualObject: {fileID: 3168261761009520246}
   midPointParent: {fileID: 8526933158783933238}
   bowStringStretchLimit: 1
+  hapticsFallback: {fileID: 0}
   OnBowPulled:
     m_PersistentCalls:
       m_Calls:
@@ -1206,6 +1207,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  topLimb: {fileID: 3076105573845565435}
+  bottomLimb: {fileID: 7048830734872989522}
+  maxLimbRotation: 12
 --- !u!114 &1530552580473326658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,6 +1226,7 @@ MonoBehaviour:
   arrowPrefab: {fileID: 3974213605446010928, guid: cac49e1d6976faa448fca5c32a3a312a, type: 3}
   arrowSpawnPoint: {fileID: 1675103130447284283}
   arrowMaxSpeed: 10
+  arrowReleaseAudio: {fileID: 0}
 --- !u!1 &6120532722380616525
 GameObject:
   m_ObjectHideFlags: 0

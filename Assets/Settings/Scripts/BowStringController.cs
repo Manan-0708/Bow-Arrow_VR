@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -13,7 +14,7 @@ public class BowStringController : MonoBehaviour
     [SerializeField] private Transform midPointParent;
 
     [Header("Settings")]
-    [SerializeField] private float bowStringStretchLimit = 0.3f;
+    [SerializeField] private float bowStringStretchLimit = 0.6f;
 
     [Header("Haptics")]
     [SerializeField] private HapticSender hapticsFallback;
@@ -42,21 +43,27 @@ public class BowStringController : MonoBehaviour
     {
         interactor = args.interactorObject.transform;
 
-        // Try to get haptics from controller, otherwise use fallback
         currentHaptics =
             args.interactorObject.transform.GetComponentInChildren<HapticSender>()
             ?? hapticsFallback;
 
         OnBowPulled?.Invoke();
+
+        // Session tracking + tutorial
+        SessionTracker.Instance.OnBowGrab();
+        TutorialController.Instance?.OnBowGrab();
     }
 
     private void ResetBowString(SelectExitEventArgs args)
     {
-        // Strong haptic pulse on release
+        // Strong release pulse
         currentHaptics?.SendHapticImpulse(1f, 0.12f);
 
         OnBowReleased?.Invoke(strength);
         strength = 0f;
+
+        // stop session tracking
+        SessionTracker.Instance.OnBowRelease();
 
         currentHaptics = null;
         interactor = null;
@@ -71,41 +78,35 @@ public class BowStringController : MonoBehaviour
     {
         if (interactor == null) return;
 
-        // Convert grab position into local space of the bow
         Vector3 grabLocal =
             midPointParent.InverseTransformPoint(midPointGrabObject.position);
 
-        // Only allow backward pull on Z axis
         float localZ = Mathf.Clamp(grabLocal.z, -bowStringStretchLimit, 0f);
         float pullAbs = Mathf.Abs(localZ);
 
-        // Compute strength (0..1)
+        // quadratic strength curve (better feel)
         if (localZ < 0f && pullAbs > 0f)
-            strength = Mathf.Clamp01(
-                Remap(pullAbs, 0f, bowStringStretchLimit, 0f, 1f)
-            );
+        {
+            float normalized = Mathf.Clamp01(pullAbs / bowStringStretchLimit);
+            strength = normalized * normalized;
+        }
         else
             strength = 0f;
 
-        // Light continuous haptics while pulling
+        // continuous haptics while pulling
         if (currentHaptics != null && Time.time - lastPulseTime > 0.05f)
         {
-            currentHaptics.SendHapticImpulse(
-                Mathf.Clamp01(strength * 0.5f), 0.02f
-            );
+            currentHaptics.SendHapticImpulse(Mathf.Clamp01(strength * 0.5f), 0.02f);
             lastPulseTime = Time.time;
         }
 
-        // Move visual midpoint only along Z
         Vector3 targetLocal = new Vector3(0f, 0f, localZ);
 
         if (midPointVisualObject.parent == midPointParent)
             midPointVisualObject.localPosition = targetLocal;
         else
-            midPointVisualObject.position =
-                midPointParent.TransformPoint(targetLocal);
+            midPointVisualObject.position = midPointParent.TransformPoint(targetLocal);
 
-        // Enforce hard limit
         if (pullAbs >= bowStringStretchLimit)
         {
             strength = 1f;
@@ -114,17 +115,10 @@ public class BowStringController : MonoBehaviour
             if (midPointVisualObject.parent == midPointParent)
                 midPointVisualObject.localPosition = limitLocal;
             else
-                midPointVisualObject.position =
-                    midPointParent.TransformPoint(limitLocal);
+                midPointVisualObject.position = midPointParent.TransformPoint(limitLocal);
         }
 
-        // Update string renderer
+        TutorialController.Instance?.OnBowPulled(strength);
         bowStringRenderer.CreateString(midPointVisualObject.position);
-    }
-
-    private float Remap(float value, float fromMin, float fromMax, float toMin, float toMax)
-    {
-        if (Mathf.Approximately(fromMax, fromMin)) return toMin;
-        return (value - fromMin) / (fromMax - fromMin) * (toMax - toMin) + toMin;
     }
 }

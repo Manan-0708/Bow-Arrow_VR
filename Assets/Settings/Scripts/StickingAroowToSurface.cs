@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class StickingArrowToSurface : MonoBehaviour
 {
-    [SerializeField]
-    private Rigidbody rb;
-    [SerializeField]
-    private SphereCollider myCollider;
+    [SerializeField] private Rigidbody rb;
+    [SerializeField] private SphereCollider myCollider;
+    [SerializeField] private GameObject stickingArrow;
 
-    [SerializeField]
-    private GameObject stickingArrow;
+    private bool hasHitTarget = false;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -22,14 +17,47 @@ public class StickingArrowToSurface : MonoBehaviour
         arrow.transform.position = transform.position;
         arrow.transform.forward = transform.forward;
 
+        // Stick into moving rigidbody objects (like targets)
         if (collision.collider.attachedRigidbody != null)
         {
             arrow.transform.parent = collision.collider.attachedRigidbody.transform;
         }
 
-        collision.collider.GetComponent<IHittable>()?.GetHit();
+        // Try hit detection
+        IHittable hittable = collision.collider.GetComponentInParent<IHittable>();
+
+        if (hittable != null)
+        {
+            hasHitTarget = true;
+            hittable.GetHit();
+
+            // scoring / analytics
+            SessionTracker.Instance.OnHit(20);
+
+            VRCSVLogger.Log(
+                "ArrowHit",
+                gameObject.name,
+                "-",
+                collision.collider.name
+            );
+        }
 
         Destroy(gameObject);
+    }
 
+    private void OnDestroy()
+    {
+        // if arrow never hit a target → miss
+        if (!hasHitTarget)
+        {
+            SessionTracker.Instance.OnMiss();
+
+            VRCSVLogger.Log(
+                "ArrowMissed",
+                gameObject.name,
+                "-",
+                "No target hit"
+            );
+        }
     }
 }

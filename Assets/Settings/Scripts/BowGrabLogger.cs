@@ -27,12 +27,15 @@ public class BowGrabLogger : MonoBehaviour
     {
         string hand = args.interactorObject.transform.name;
         VRCSVLogger.Log("BowGrabbed", gameObject.name, hand);
+
+        SessionTracker.Instance.OnBowGrab();
     }
 
     void OnRelease(SelectExitEventArgs args)
     {
         string hand = args.interactorObject.transform.name;
         VRCSVLogger.Log("BowReleased", gameObject.name, hand);
+
+        SessionTracker.Instance.OnBowRelease();
     }
 }
-
