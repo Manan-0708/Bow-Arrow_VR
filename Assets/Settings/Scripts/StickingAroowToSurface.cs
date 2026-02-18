@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class StickingArrowToSurface : MonoBehaviour
 {
@@ -17,20 +17,21 @@ public class StickingArrowToSurface : MonoBehaviour
         arrow.transform.position = transform.position;
         arrow.transform.forward = transform.forward;
 
+        // Stick into moving rigidbody objects (like targets)
         if (collision.collider.attachedRigidbody != null)
         {
             arrow.transform.parent = collision.collider.attachedRigidbody.transform;
         }
 
+        // Try hit detection
         IHittable hittable = collision.collider.GetComponentInParent<IHittable>();
 
         if (hittable != null)
         {
             hasHitTarget = true;
-
             hittable.GetHit();
 
-            // ✅ NEW: Register hit (you can change points later)
+            // scoring / analytics
             SessionTracker.Instance.OnHit(20);
 
             VRCSVLogger.Log(
@@ -46,9 +47,9 @@ public class StickingArrowToSurface : MonoBehaviour
 
     private void OnDestroy()
     {
+        // if arrow never hit a target → miss
         if (!hasHitTarget)
         {
-            // ✅ NEW: Register miss
             SessionTracker.Instance.OnMiss();
 
             VRCSVLogger.Log(
